@@ -265,11 +265,11 @@ a {
     .slick-arrow {
         position: absolute;
         background-image: url(../img/nav_arrow.png);
-        background-size: 40px;
+        background-size: 50px;
         top: 0;
         bottom: 0;
-        width: 17px;
-        height: 32px;
+        width: 21px;
+        height: 39px;
         z-index: 9;
         text-indent: -99999px;
         font-size: 0;
@@ -282,8 +282,8 @@ a {
     .slick-slide {
         a {
             display: block;
-            font-size: 16px;
-            padding: 8px;
+            font-size: 20px;
+            padding: 15px;
             text-align: center;
             &:hover {
                 color: $secondary-color;
@@ -337,10 +337,10 @@ a {
     width: 100%;
     margin: 8px auto;
     .slick-slide a {
-        font-size: 14px;
-        padding: 5px;
+        font-size: 16px;
+        padding: 10px;
         margin: 0 auto;
-        max-width: 115px;
+        max-width: 135px;
     }   
 }
 .pxd-wrapper__full-width {
@@ -408,6 +408,8 @@ a {
     }
 }
 .pxd-content {
+    max-width: 85%;
+    margin: 0 auto;
     margin-top: 20px;
     text-align: center;
     h5 {
@@ -500,8 +502,11 @@ a {
     }
 }
 @media (max-width: 767px) {
-    .pxd-content .form-group {
-        margin-bottom: 10px;
+    .pxd-content {
+        max-width: 100%;
+        .form-group {
+            margin-bottom: 10px;
+        }
     }
 }
 
@@ -873,7 +878,7 @@ a {
 }
 /*** INDEX ***/
 .pxd-home {
-    width: 100%;
+    max-width: 85%;
     margin: 20px auto 0;
     padding: 0 60px;
     .slide-home {
@@ -922,6 +927,7 @@ a {
 }
 @media (max-width: 767px) {
     .pxd-home {
+        max-width: 100%;
         padding: 0 45px;
     }
     .slide-home .slick-arrow, 
