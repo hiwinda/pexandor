@@ -1,22 +1,43 @@
 $(document).ready(function(){
+    /*--- Start:: Fullpage ---*/ 
+	var myFullpage = new fullpage('#pxd_fullpage', {
+        responsiveWidth: 900,
+        afterResponsive: function(isResponsive){
+
+        }
+    });
+    /*--- End:: Fullpage ---*/ 
     /*--- Start:: Slick ---*/ 
+	// slick home
+	$('.slide-home').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		fade: true,
+		asNavFor: '.slide-home__nav'
+	});
+	$('.slide-home__nav').slick({
+		slidesToShow: 6,
+		slidesToScroll: 1,
+		asNavFor: '.slide-home',
+		responsive: [{
+			breakpoint: 767,
+			settings: {
+				slidesToShow: 4,
+				slidesToScroll: 1,
+			}
+		},
+		]
+	});
+	// slick navbar
 	$('.pxd-nav__slick').slick({
 		centerMode: true,
 		centerPadding: '15px',
 		slidesToShow: 5,
 			responsive: [{
-					breakpoint: 768,
-					settings: {
-						centerMode: true,
-						centerPadding: '10px',
-						slidesToShow: 3
-					}
-				},
-			{
-				breakpoint: 480,
+				breakpoint: 768,
 				settings: {
 					centerMode: true,
-					centerPadding: '15px',
+					centerPadding: '10px',
 					slidesToShow: 1
 				}
 			}
@@ -30,6 +51,7 @@ $(document).ready(function(){
 	$('.pxd-wrapper__subnav-third .pxd-subnav__slick').slick({
 		slidesToShow: 3,
 		arrows: true,
+		centerMode: true,
 		centerPadding: '15px',
 		responsive: [{
 			breakpoint: 480,
@@ -40,12 +62,7 @@ $(document).ready(function(){
 			}
 		]
 	});
-	// slider gallery group
-	$('.slider-gallery__top').slick({
-		slidesToShow: 1,
-		arrows: true,
-	});
-	// slick gallery
+	// slider gallery
 	$('.slider-gallery').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -87,26 +104,7 @@ $(document).ready(function(){
    
 		$('.slider-gallery').slick('slickGoTo', goToSingleSlide);
 	});
-	// slick home
-	$('.slide-home').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		fade: true,
-		asNavFor: '.slide-home__nav'
-	});
-	$('.slide-home__nav').slick({
-		slidesToShow: 6,
-		slidesToScroll: 1,
-		asNavFor: '.slide-home',
-		focusOnSelect: true,
-		responsive: [{
-			breakpoint: 767,
-			settings: {
-				slidesToShow: 4
-			}
-		},
-		]
-	});
+	
 	// slider gallery group
 	$('.slider-about__us').slick({
 		slidesToShow: 1,
@@ -128,6 +126,7 @@ $(document).ready(function(){
 		$(this).find('li').slice(limit).hide();
 	})
 	$('.scroll-up').click(function(e) {
+		console.log('up');
 		e.preventDefault();
 		var cont = $(this).parent().find('.scrollable-content:eq(0)');
 		if (cont.find('li:eq(0)').is(':hidden')) {
