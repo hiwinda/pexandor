@@ -195,10 +195,10 @@ a {
 @media (max-height: 821px){
     .container{
         &.single-nav {
-            padding-top: 195px;
+            padding-top: 205px;
         }
         &.double-nav {
-            padding-top: 140px;
+            padding-top: 170px;
         }
     }
 }
@@ -435,6 +435,7 @@ a {
 
         .slick-slide img {
             width: 100%;
+            max-height: 320px;
         }
     }
 
@@ -644,7 +645,7 @@ a {
     }
 
     ul {
-        margin: 10px auto;
+        margin: 0 auto;
         li {
             text-align: left;
             font-size: 14px;
@@ -656,8 +657,8 @@ a {
 .pxd-list__faq {
     max-width: 800px;
     width: 100%;
-    margin: 0 auto;
-    height: 310px;
+    margin: 10px auto;
+    height: 290px;
     overflow: hidden;
     li {
         h4 {
@@ -850,6 +851,7 @@ a {
     max-width: 800px;
     margin: 0 auto;
     position: relative;
+    padding: 20px 0;
     h5 {
         font-size: 24px;
         line-height: 1.2em;
@@ -873,24 +875,28 @@ a {
 } 
 /*--- REGISTER ---*/
 .pxd-content__tabs {
+    min-height: calc(350px + 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     .pxd-tabs__btn {
         position: absolute;
-        bottom: 30px;
+        bottom: 0;
         left: 0;
         right: 0;
         margin: auto;
         height: 80px;
         >a {
             font-size: 22px;
-            width: 104px;
+            width: 122px;
             display: table;
             margin: 5px auto 0;
             text-align: center;
+            padding-top: 2px;
             position: relative;
             &:after {
                 background-image: url(../img/bg_btn.png);
                 background-repeat: no-repeat;
-                background-position: 0 4px;
                 background-size: 100%;
                 position: absolute;
                 content: "";
@@ -899,9 +905,9 @@ a {
                 left: 0;
                 right: 0;
                 z-index: -1;
-                margin: auto;
+                margin: 0 auto;
                 width: 85px;
-                height: 34px;
+                height: 31px;
                 transition: all 0.5s ease;
             }
             &:hover {
@@ -923,20 +929,26 @@ a {
             font-size: 25px;
             &:after {
                 background-image: url(../img/bg_btn_full.png);
-                width: 100px;
-                height: 27px;
+                width: 122px;
+                height: 32px;
             }
             &:hover {
-                width: 110px;
+                width: 130px;
                 &:after {
-                    width: 110px;
-                    height: 28px;
+                    width: 130px;
+                    height: 34px;
                 }
             }
         }
         .btnPrevious:hover:after {
             right: 10px;
         }
+    }
+    .pxd-last-form .pxd-text__scroll {
+        width: 100%;
+        max-width: 575px;
+        display: table;
+        margin: 0 auto;
     }
 }
 @media (max-height: 550px) {
